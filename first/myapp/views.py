@@ -1,5 +1,19 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hello, world")
+    """/ トップページ"""
+    context = {
+        'name': 'nayuta',
+    }
+    return render(request, 'myapp/index.html', context)
+
+
+def about(request):
+    """/about アバウトページ"""
+    return render(request, 'myapp/about.html')
+
+
+def info(request):
+    """/info インフォページ"""
+    return render(request, 'myapp/info.html')
